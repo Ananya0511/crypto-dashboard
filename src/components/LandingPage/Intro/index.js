@@ -43,7 +43,17 @@ function LandingPageComponent() {
         </div>
         <div className='landing-right'>
             <img src={gradient} className="gradient" />
-            <img src={iphone} className="iphone" />
+            <motion.img 
+            src={iphone} 
+            className="iphone" 
+                initial={{ y: -10 }}
+                animate={{ y: 10 }}
+                transition={{
+                    type:"smooth",
+                    repeatType: "mirror",
+                    duration: 2,
+                    repeat: Infinity,
+                }}/>
         </div>
     </div>
   )
