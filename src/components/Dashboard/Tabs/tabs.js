@@ -6,6 +6,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import { Box } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Grid from '../Grid/grid';
+import List from '../List/list';
 import "./style.css"
 
 function Tabs({ coins }) {
@@ -51,8 +52,15 @@ function Tabs({ coins }) {
             ))}
             </div>
         </TabPanel>
-        <TabPanel value="list">Item Two</TabPanel>
+        {/* <TabPanel value="list">Item Two</TabPanel> */}
         {/* <TabPanel value="3">Item Three</TabPanel> */}
+        <TabPanel value="list" className="tabPanel">
+            <table className="list-flex">
+              {coins.map((coin, i) => (
+                <List coin={coin} key={i} delay={(i % 10) * 0.1} />
+              ))}
+            </table>
+        </TabPanel>
       </TabContext>
       </ThemeProvider>
     </div>
