@@ -47,13 +47,11 @@ function Tabs({ coins }) {
         <TabPanel value="grid">
             <div className='grid-flex'>
             {coins.map((coin, i) => (
-                <Grid coin={coin} key={i} />
+                <Grid coin={coin} key={i} delay={((i + 5) % 5) * 0.1}/>
                 // <p key={i}>{item.name}</p>
             ))}
             </div>
         </TabPanel>
-        {/* <TabPanel value="list">Item Two</TabPanel> */}
-        {/* <TabPanel value="3">Item Three</TabPanel> */}
         <TabPanel value="list" className="tabPanel">
             <table className="list-flex">
               {coins.map((coin, i) => (
