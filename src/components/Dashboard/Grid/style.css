@@ -44,7 +44,7 @@
 .coin-symbol{
     font-size: 1.2rem;
     color: var(--white);
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     margin: 0;
 }
@@ -55,6 +55,11 @@
     font-weight: 300;
     text-transform: capitalize;
     margin: 0;
+}
+
+.price-chip {
+    min-width: 4rem;
+    text-align: center;
 }
 
 .price-chip,.trending-icon {

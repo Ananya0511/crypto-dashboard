@@ -2,7 +2,7 @@ import React from 'react'
 import "./style.css";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
-// import { convertNumbers } from "../../../functions/convertNumbers";
+import { convertNumbers } from "../../../functions/convertNumbers";
 import { motion } from "framer-motion";
 import { Tooltip } from "@mui/material";
 
@@ -75,7 +75,7 @@ function List({ coin, delay }) {
             <Tooltip placement="bottom-start" title="Market Cap">
               <td className="mobile-td-cap">
                 <span className="coin-total_volume coin-total_volume-list">
-                  {/* ${convertNumbers(parseInt(coin.market_cap))} */}
+                  ${convertNumbers(parseInt(coin.market_cap))}
                 </span>
               </td>
             </Tooltip>
