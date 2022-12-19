@@ -4,6 +4,8 @@ import Header from "../components/Common/Header/header";
 import SearchComponent from "../components/Dashboard/Search/search";
 import Tabs from "../components/Dashboard/Tabs/tabs";
 import PaginationComponent from "../components/Dashboard/Pagination/pagination";
+import TopButton from "../components/Common/BackToTop/topButton";
+import Loader from "../components/Common/Loader/loader";
 
 
 function DashboardPage() {
@@ -42,6 +44,7 @@ function DashboardPage() {
     }, []);
 
     const getData = () => {
+        setLoading(true);
         //Call the API and get the data
         axios
         .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
@@ -49,28 +52,36 @@ function DashboardPage() {
             console.log("RESPONSE>>>", response);
             if (response.status == 200) {
               setCoins(response.data);
-            //   setPaginatedCoins(response.data.slice(0, 10));
-            //   setLoading(false);
+              setPaginatedCoins(response.data.slice(0, 10));
+              setLoading(false);
             }
           })
           .catch((error) => {
             console.log("ERROR>>>",error);
+            setLoading(false);
           });
     };
 
   return (
-    <div>
-        <Header />
-        <SearchComponent search={search} onChange={onChange}/>
-        <Tabs coins={search ? filteredCoins : paginatedCoins}/>
-        {!search && (
+    <>
+      <TopButton />
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          <Header />
+          <SearchComponent search={search} onChange={onChange} />
+          <Tabs coins={search ? filteredCoins : paginatedCoins} />
+          {!search && (
             <PaginationComponent
               pageNumber={pageNumber}
               handleChange={handlePageChange}
             />
-        )}
-    </div>
-  )
+          )}
+        </div>
+      )}
+    </>
+  );
 }
 
 export default DashboardPage;
