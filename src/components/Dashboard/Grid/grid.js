@@ -14,7 +14,7 @@ function Grid({ coin, delay }) {
     className={`grid-container ${coin.price_change_percentage_24h < 0 && "grid-container-red"
     }`}>
         <div className='info-flex'>
-            <img src={coin.image} className="coin-image" />
+            <img src={coin.image} className="coin-image" alt='coin'/>
             <div className='coin-name-flex'>
                 <h3 className='coin-symbol'>{coin.symbol}</h3>
                 <p className='coin-name'>{coin.name}</p>
