@@ -8,7 +8,7 @@
 
 .heading-1,
 .heading-2 {
-    font-size: 6rem;
+    font-size: 7rem;
     margin: 0px;
     font-weight: 800;
 }
@@ -37,7 +37,7 @@
 }
 
 .landing-right{
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     justify-content: flex-end;
     margin-left: auto;
@@ -46,19 +46,19 @@
 
 .gradient{
     position: absolute;
-    max-width: 280px;
-    top: 5rem;
-    z-index: 0;
+    max-width: 300px;
+    top: 6rem;
     object-fit: contain;
+    z-index: 0;
 
 }
 
 .iphone{
     position: absolute;
-    max-width: 350px;
+    max-width: 380px;
     object-fit: contain;
     z-index: 1;
-    right: 1rem;
+    right: 0rem;
 }
 
 @media only screen and (max-width: 1250px){
@@ -138,6 +138,12 @@
 
     .btn-flex{
         justify-content: center;
+    }
+
+    @media only screen and (max-width: 380px){
+        .landing-wrapper{
+            height: 120vh;
+        }
     }
 
 }

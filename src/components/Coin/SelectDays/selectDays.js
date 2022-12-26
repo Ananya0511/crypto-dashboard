@@ -1,11 +1,12 @@
-import React from 'react';
+// eslint-disable-next-line
+import React, {useState} from 'react';
 import { MenuItem, Select } from "@mui/material";
 import "./style.css";
 
-function SelectDays({ days, handleDaysChange }) {
+function SelectDays({ days, handleDaysChange, noText }) {
   return (
     <div className="select-days">
-      <p>Price Change in </p>
+      {!noText && <p>Price Change in </p>}
       <Select
         value={days}
         onChange={handleDaysChange}
@@ -32,7 +33,7 @@ function SelectDays({ days, handleDaysChange }) {
         <MenuItem value={120}>120 Days</MenuItem>
       </Select>
     </div>
-  )
+  );
 }
 
 export default SelectDays;
