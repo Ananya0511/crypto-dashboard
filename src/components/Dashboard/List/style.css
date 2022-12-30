@@ -91,7 +91,7 @@
   width: min-content !important;
 }
 
-.mobile-td-cap {
+.mobile-td-cap, .mobile-price {
   display: none;
 }
 @media only screen and (max-width: 1000px) {
@@ -118,11 +118,12 @@
     margin-top: 1rem;
     width: 100%;
     gap: 0rem !important;
+    padding: 0rem;
   }
-  .td-mkt-cap {
+  .td-mkt-cap, .desktop-price {
     display: none !important;
   }
-  .mobile-td-cap {
+  .mobile-td-cap, .mobile-price {
     display: block;
   }
   .coin-price-list {
@@ -133,5 +134,11 @@
   .coin-name-list,
   .coin-total_volume-list {
     font-size: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .td-price-chip-list {
+    display: none;
   }
 }
